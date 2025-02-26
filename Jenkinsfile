@@ -16,6 +16,15 @@ pipeline {
 
   stages {
 
+    stage('Build') {
+      steps {
+        script {
+          sh 'node -v'
+          sh 'npm install'
+        }
+      }
+    }
+
     stage('Policy') {
       steps {
         script {
