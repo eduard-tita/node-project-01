@@ -38,6 +38,7 @@ pipeline {
                   [scanPattern: 'package-lock.json']
               ],
               callflow: [
+                  force: true,
                   logLevel: 'DEBUG',
                   jsAnalysis: [
                       enable: true,
