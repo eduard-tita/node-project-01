@@ -45,10 +45,10 @@ pipeline {
                       algorithm: 'NBA',
                       projectDirectory: '.',                // relative to workspace
                       packageJsonFile: 'package.json',      // relative to workspace
-                      nodeModulesDirectory: 'node_modules', // relative to workspace
-                      sourceFiles: [                        // relative to workspace
-                          [pattern: 'src/**/*.js']
-                      ]
+                      nodeModulesDirectory: 'node_modules'//, // relative to workspace
+                      //sourceFiles: [                        // relative to workspace
+                      //    [pattern: 'src/**/*.js']
+                      //]
                   ]
               ]
           )
