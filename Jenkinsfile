@@ -45,9 +45,9 @@ pipeline {
                       algorithm: 'NBA',
                       projectDirectory: '.',                // relative to workspace
                       packageJsonFile: 'package.json',      // relative to workspace
-                      //sourceFiles: [                        // relative to workspace
-                      //    [pattern: 'src/**/*.js']
-                      //]
+                      sourceFiles: [                        // relative to workspace
+                          [pattern: 'src/**/*.js']
+                      ],
                       excludeFiles: [                      // relative to workspace
                           [pattern: 'blah/**/*.js']
                       ]
