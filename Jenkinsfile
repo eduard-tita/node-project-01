@@ -37,7 +37,7 @@ pipeline {
                   [scanPattern: 'package.json'],
                   [scanPattern: 'package-lock.json']
               ],
-              callflow: [
+              reachability: [
                   logLevel: 'DEBUG',
                   jsAnalysis: [
                       enable: true,
@@ -46,10 +46,10 @@ pipeline {
                       projectDirectory: '.',                // relative to workspace
                       packageJsonFile: 'package.json',      // relative to workspace
                       sourceFiles: [                        // relative to workspace
-                          [pattern: 'src/**/*.js']
+                          [pattern: 'src/**/*']
                       ],
                       excludeFiles: [                      // relative to workspace
-                          [pattern: 'blah/**/*.js']
+                          [pattern: 'blah/**/*']
                       ]
                   ]
               ]
