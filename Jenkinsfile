@@ -34,16 +34,26 @@ pipeline {
               iqApplication: 'sandbox-application',
               failBuildOnNetworkError: true,
               iqScanPatterns: [
+                  [scanPattern: 'h2-1.4.196.jar'],
                   [scanPattern: 'package.json'],
                   [scanPattern: 'package-lock.json']
               ],
               reachability: [
                   logLevel: 'DEBUG',
+                  javaAnalysis: [
+                      enable: true,
+                      entrypointStrategy: 'JAVA_MAIN',
+                      namespaces: [
+                          [namespace: 'org.h2.tools'],
+                          [namespace: 'org.h2.server'],
+                          [namespace: 'org.h2.util']
+                      ]
+                  ],
                   jsAnalysis: [
                       enable: true,
                       force: true,
-                      algorithm: 'NBA',
-                      projectDirectory: '.',                // relative to workspace
+                      //algorithm: 'NBA',
+                      //projectDirectory: '.',                // relative to workspace
                       packageJsonFile: 'package.json',      // relative to workspace
                       sourceFiles: [                        // relative to workspace
                           [pattern: 'src/**/*']
